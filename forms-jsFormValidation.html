@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Music Preferences</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  function validate(){
+	var name = document.getElementById("name").value;
+		if(name == null){
+			alert("Please enter your name");
+			return false;
+		}
+	var age = parseInt(document.getElementById("age").value;
+		if(isNaN(age)){
+			alert("Age must be numeric");
+			return false;
+		}
+		else if(age < 12 || age > 100){
+			alert("Your age is invalid for our survey purposes");
+			return false;
+		}
+	var purchase = parseInt(document.getElementById("purchase").value;
+	var regPurchase = /^\d{5}$/;
+		if(purchase.match(regPurchase) = false && purchase < 1930 || purchase > 2017){
+			alert("Year of your first music purchase must be 4 digits and between 1930 and 2017");
+			return false;
+		}
+		else if(purchase < 1930 || purchase > 2017){
+			alert("Year of your first music purchase must be 4 digits and between 1930 and 2017");
+			return false;
+		}
+	var favoritetypes = document.getElementById("favoritetypes");
+		if(favoritetypes.checked == false){
+			alert("You must checked at least one type of music");
+			return false;
+		}
+	var preferredTextbox = document.getElementById("preferredTextbox");
+	var preferred = document.getElementById("preferred");
+		if(preferred.checked == false){
+			alert("Tell us your preferred format for purchased music");
+			return false;
+		}
+		else if(preferred.other.checked == true && preferredTextbox == null){}
+			alert("Tell us what other format your prefer for purchased music");
+			return false;
+			}
+		}
+  </script>
+</head>
+
+<body>
+  <h1>Your Music Preferences</h1>
+  <form action="http://webdevbasics.net/scripts/demo.php" method="post">
+  
+  <label for="name">Name: </label><input type="text" name="name" id="name" size="30" required="required">
+  <br><br><label for="age">Age: </label><input type="text" name="age" id="age" size="5" required="required">
+  <br><br><label for="purchase">Year of your first music purchase: </label><input type="text" name="purchase" id="purchase" size="5" required="required">
+
+<h2>Slect your favorite types of music</h2>
+
+	<input type="checkbox" name="favoritetypes" id="favoritetypes" value="Pop">Pop<br>
+	<input type="checkbox" name="favoritetypes" id="favoritetypes" value="Rock">Rock<br>
+	<input type="checkbox" name="favoritetypes" id="favoritetypes" value="Rap">Rap<br><br>
+
+<h2>Slect your favorite types of music</h2>
+
+	<input type="radio" name="preferred" id="preferred" value="CD">CD<br>
+	<input type="radio" name="preferred" id="preferred" value="MP3">MP3<br>
+	<input type="radio" name="preferred" id="preferred" value="other">Other: 	
+		<input type="text" name="preferred" id="preferredTextbox" size="20"><br>
+	<input type="radio" name="preferred" id="preferred" value="never">Never purchase music 
+	<br><br>
+	
+<h2>What role does music play in your life?</h2>
+
+	<textarea rows="4" cols="50" name="role"></textarea required="required">
+	
+	<br>
+	<input type="submit" id="mainbutton" value="Submit Survey"> 
+	<input type="reset" id="mainbutton">
+	
+  </form>
+</body>
+</html>
